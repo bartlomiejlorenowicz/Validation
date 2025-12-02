@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 public class TaskController {
 
     @GetMapping("/{priority}")
-    public ResponseEntity<List<TaskDto>> getFiltered(@PathVariable @Min(1) @Max(5) int priority) {
+    public ResponseEntity<List<TaskDto>> getFiltered( @PathVariable @Range(min = 1, max = 5) int priority) {
         List<TaskDto> dtos = TaskRepository.getRepository()
                 .stream()
                 .filter(task -> task.getPriority() == priority)

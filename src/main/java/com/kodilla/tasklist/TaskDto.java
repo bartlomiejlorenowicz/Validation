@@ -1,7 +1,5 @@
 package com.kodilla.tasklist;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.Value;
 
@@ -17,7 +15,6 @@ public class TaskDto {
     @NotNull
     String title;
 
-    @Min(1)
-    @Max(5)
+    @Range(min = 1, max = 5)
     int priority;
 }
